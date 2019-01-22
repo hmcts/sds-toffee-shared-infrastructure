@@ -15,12 +15,12 @@ deploymentTarget = 'v2'
 Environment environment = new Environment(env)
 
 onMaster {
-  sharedInfrastructurePipeline('rhubarb', environment.nonProdName, 'nonprod', planOnly,deploymentTarget)
-  sharedInfrastructurePipeline('rhubarb', environment.demoName, 'nonprod', planOnly,deploymentTarget)
-  sharedInfrastructurePipeline('rhubarb', environment.prodName, 'prod', planOnly,deploymentTarget)
+  sharedInfrastructurePipeline('plum', environment.nonProdName, 'nonprod', planOnly,deploymentTarget)
+  sharedInfrastructurePipeline('plum', environment.demoName, 'nonprod', planOnly,deploymentTarget)
+  sharedInfrastructurePipeline('plum', environment.prodName, 'prod', planOnly,deploymentTarget)
 }
 
 onPR {
   //sharedInfrastructurePipeline('rhubarb', environment.previewName, 'nonprod', planOnly,deploymentTarget)
-  sharedInfrastructurePipeline('rhubarb', environment.nonProdName, 'nonprod', planOnly,deploymentTarget)
+  sharedInfrastructurePipeline('plum', environment.nonProdName, 'nonprod', planOnly,deploymentTarget)
 }
