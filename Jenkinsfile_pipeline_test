@@ -1,0 +1,20 @@
+#!groovy
+//noinspection GroovyUnusedAssignment
+
+properties([
+  parameters([
+    string(name: 'LIB_VERSION', defaultValue: 'master', description: 'Branch name of pipeline library to use')
+  ])
+])
+
+library "Infrastructure@${params.LIB_VERSION}"
+
+import uk.gov.hmcts.contino.Environment
+
+Environment environment = new Environment(env)
+
+onMaster {
+  sharedInfrastructurePipeline('rhubarb-shared-infrastructure', environment.nonProdName, 'nonprod')
+  sharedInfrastructurePipeline('rhubarb-shared-infrastructure', environment.demoName, 'nonprod')
+  sharedInfrastructurePipeline('rhubarb-shared-infrastructure', environment.prodName, 'prod')
+}
