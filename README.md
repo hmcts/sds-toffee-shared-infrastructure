@@ -1,11 +1,21 @@
-# cnp-rhubarb-shared-infrastructure
+# cnp-plum-shared-infrastructure
 
-This repository contains the shared the common infra components per Environment (persistent) for Rhubarb
+This repository contains the shared the common infra components per Environment (persistent) for Plum
 
 - Application Insights
 - Azure Key Vault
 - Storage Account
 - Traffic Manager
+- Application Gateway (legacy)
+
+# cnp-plum-shared-infrastructure-{env}{DT}
+
+This repository contains the shared the common infra components per Deployment Target for Plum
+
+- Application Gateway (DT)
+- App Service Plan (DT)
+- Storage Account (DT)
+
 
 ## Traffic Manager
 

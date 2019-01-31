@@ -1,6 +1,6 @@
 locals {
-  backend_name = "${var.product}-frontend-${var.env}${var.deployment_target}"
-  backend_hostname = "${local.backend_name}.service.${var.env}.platform.hmcts.net"
+  backend_name = "${var.product}-frontend-${var.env}"
+  backend_hostname = "${local.backend_name}.service.core-compute-${var.env}.internal"
 }
 
 data "azurerm_key_vault_secret" "cert" {
@@ -9,7 +9,7 @@ data "azurerm_key_vault_secret" "cert" {
 }
 
 data "azurerm_subnet" "app_gateway_subnet" {
-  name                 = "app-gateway-${var.env}${var.deployment_target}"
+  name                 = "${var.infra_location}-subnet-0-${var.env}"
   virtual_network_name = "${var.infra_location}-vnet-${var.env}"
   resource_group_name  = "${var.infra_location}-${var.env}"
 }
@@ -17,11 +17,10 @@ data "azurerm_subnet" "app_gateway_subnet" {
 module "waf" {
   source            = "git@github.com:hmcts/cnp-module-waf?ref=master"
   env               = "${var.env}"
-  deployment_target = "${var.deployment_target}"
   subscription      = "${var.subscription}"
   location          = "${var.location}"
   wafName           = "${var.product}"
-  resourcegroupname = "${azurerm_resource_group.shared_resource_group_te.name}"
+  resourcegroupname = "${azurerm_resource_group.shared_resource_group.name}"
   use_authentication_cert = true
 
   # vNet connections
@@ -89,7 +88,7 @@ module "waf" {
       port                           = 443
       Protocol                       = "Https"
       CookieBasedAffinity            = "Disabled"
-      AuthenticationCertificates     = ""
+      AuthenticationCertificates     = "ilbCert"
       probeEnabled                   = "True"
       probe                          = "https-probe"
       PickHostNameFromBackendAddress = "True"
