@@ -2,6 +2,9 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "name": {
+      "type": "string"
+  },
     "endpoints": {
       "type": "array",
       "metadata": {
@@ -14,7 +17,7 @@
       "apiVersion": "2018-04-01",
       "type": "Microsoft.Network/trafficManagerProfiles/ExternalEndpoints",
       "location": "global",
-      "name": "[concat('ExampleTMProfile/', parameters('endpoints')[copyIndex()].name)]",
+      "name": "[concat(parameters('name'), '/', parameters('endpoints')[copyIndex()].name)]",
       "copy": {
         "name": "endpointloop",
         "count": "[length(parameters('endpoints'))]"
