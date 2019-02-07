@@ -52,7 +52,7 @@
                             "priority": "[parameters('endpoints')[copyIndex('endpoints')].priority]",
                             "customHeaders": [{
                                 "name": "Host",
-                                "value": "aa.bb.net"
+                                "value": "[parameters('endpoints')[copyIndex('endpoints')].hostHeader]"
                             }],
                             "endpointLocation": "UK South"
                         }
