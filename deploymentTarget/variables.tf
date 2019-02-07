@@ -69,7 +69,7 @@ variable "certificate_name" {
 
 variable "public_hostname" {
   type = "string"
-  default = "plum1.platform.hmcts.net"
+  default = "plum.platform.hmcts.net"
   description = "The public hostanme to use when accessing plum's frontend"
 }
 
