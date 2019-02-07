@@ -39,7 +39,7 @@ data "template_file" "traffic_manager_template" {
 resource "azurerm_template_deployment" "traffic_manager_enpoints" {
   template_body       = "${data.template_file.traffic_manager_template.rendered}"
   name                = "${var.product}-${var.env}-tm"
-  resource_group_name = "${azurerm_resource_group.shared_resource_group_te.name}"
+  resource_group_name = "${var.product}-shared-infrastructure-${var.env}"
   deployment_mode     = "Incremental"
   parameters_body     = "${data.template_file.traffic_manager_parameters.rendered}"
 }
