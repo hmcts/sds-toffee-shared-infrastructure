@@ -14,7 +14,7 @@ locals {
       target      = "${data.null_data_source.waf-pip.outputs["pip"]}"
       priority    = "2"
       status      = "Enabled"
-      host_header = "Host:${var.public_hostname}" // // This has to be the same hostname used in the listeners of the WAF
+      host_header = "${var.public_hostname}" // // This has to be the same hostname used in the listeners of the WAF
     }
   ]
 }
