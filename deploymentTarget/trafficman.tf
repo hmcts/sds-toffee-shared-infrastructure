@@ -28,7 +28,6 @@ data "template_file" "traffic_manager_parameters" {
 
   vars {
     name      = "${var.product}-${var.env}"
-    team_name = "${var.common_tags["Team Name"]}"
     endpoints = "${join(",", data.template_file.endpoints.*.rendered)}"
   }
 }
