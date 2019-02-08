@@ -97,10 +97,5 @@ variable "common_tags" {
   type = "map"
 }
 
-variable "nr_of_tm_endpoints" {
-  default     = "3"
-  description = "Number of endpoints that TM will be pointing to this must be provided upfront and also depends on how many times we call was module"
-}
-
 variable deployment_target {
 }
