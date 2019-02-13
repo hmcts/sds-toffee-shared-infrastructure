@@ -1,6 +1,6 @@
 #!groovy
 //noinspection GroovyUnusedAssignment
-@Library("Infrastructure@deployment-target-spike") _
+@Library("Infrastructure@deployment-target") _
 
 properties([
     parameters([
