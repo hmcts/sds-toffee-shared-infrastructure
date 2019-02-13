@@ -1,7 +1,7 @@
 #!groovy
 import groovy.json.JsonSlurper
 
-@Library('Infrastructure@deployment-target-spike') _
+@Library('Infrastructure@deployment-target') _
 
 properties([
     parameters([
