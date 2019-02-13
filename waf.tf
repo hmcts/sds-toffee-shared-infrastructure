@@ -1,5 +1,5 @@
 locals {
-  backend_name = "${var.product}-frontend-${var.env}"
+  backend_name     = "${var.product}-frontend-${var.env}"
   backend_hostname = "${local.backend_name}.service.core-compute-${var.env}.internal"
 }
 
@@ -15,13 +15,14 @@ data "azurerm_subnet" "app_gateway_subnet" {
 }
 
 module "waf" {
-  source            = "git@github.com:hmcts/cnp-module-waf?ref=master"
-  env               = "${var.env}"
-  subscription      = "${var.subscription}"
-  location          = "${var.location}"
-  wafName           = "${var.product}"
-  resourcegroupname = "${azurerm_resource_group.shared_resource_group.name}"
+  source                  = "git@github.com:hmcts/cnp-module-waf?ref=master"
+  env                     = "${var.env}"
+  subscription            = "${var.subscription}"
+  location                = "${var.location}"
+  wafName                 = "${var.product}"
+  resourcegroupname       = "${azurerm_resource_group.shared_resource_group.name}"
   use_authentication_cert = true
+  common_tags             = "${var.common_tags}"
 
   # vNet connections
   gatewayIpConfigurations = [
@@ -63,6 +64,7 @@ module "waf" {
   backendAddressPools = [
     {
       name = "${local.backend_name}"
+
       backendAddresses = [
         {
           ipAddress = "${local.backend_hostname}"
