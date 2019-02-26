@@ -9,12 +9,8 @@ properties([
 
 library "Infrastructure@${params.LIB_VERSION}"
 
-import uk.gov.hmcts.contino.Environment
+def product = "crumble"
 
-Environment environment = new Environment(env)
-
-onMaster {
-  sharedInfrastructurePipeline('plum-shared-infrastructure', environment.nonProdName, 'nonprod')
-  sharedInfrastructurePipeline('plum-shared-infrastructure', environment.demoName, 'nonprod')
-  //sharedInfrastructurePipeline('plum-shared-infrastructure', environment.prodName, 'prod')
+withInfraPipeline(product) {
+  
 }
