@@ -2,25 +2,8 @@
 //noinspection GroovyUnusedAssignment
 @Library("Infrastructure") _
 
-properties([
-    parameters([
-        booleanParam(name: 'PLAN_ONLY', defaultValue: false, description: 'set to true for skipping terraform apply')
-    ])
-])
+def product = "plum"
 
-import uk.gov.hmcts.contino.Environment
-
-planOnly = params.PLAN_ONLY
-deploymentTarget = '-v2'
-Environment environment = new Environment(env)
-
-onMaster {
-  sharedInfrastructurePipeline('plum', environment.nonProdName, 'nonprod', planOnly,deploymentTarget)
-  //sharedInfrastructurePipeline('plum', environment.demoName, 'nonprod', planOnly,deploymentTarget)
-  sharedInfrastructurePipeline('plum', environment.prodName, 'prod', planOnly,deploymentTarget)
-}
-
-onPR {
-  //sharedInfrastructurePipeline('rhubarb', environment.previewName, 'nonprod', planOnly,deploymentTarget)
-  sharedInfrastructurePipeline('plum', environment.nonProdName, 'nonprod', planOnly,deploymentTarget)
+withInfraPipeline(product) {
+  
 }
