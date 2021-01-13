@@ -8,7 +8,7 @@ module "vault" {
   tenant_id                   = var.tenant_id
   object_id                   = var.jenkins_AAD_objectId
   resource_group_name         = azurerm_resource_group.shared_resource_group.name
-  product_group_object_id     = "300e771f-856c-45cc-b899-40d78281e9c1"
+  product_group_object_id     = "e7ea2042-4ced-45dd-8ae3-e051c6551789"
   common_tags                 = local.tags
   managed_identity_object_id = var.managed_identity_object_id
   create_managed_identity     = true
