@@ -1,7 +1,7 @@
 //KEY VAULT RESOURCE
 
 module "vault" {
-  source                      = "git@github.com:hmcts/cnp-module-key-vault?ref=azurermv2"
+  source                      = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
   name                        = local.vault_name
   product                     = var.product
   env                         = var.env
