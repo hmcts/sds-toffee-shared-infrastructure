@@ -2,7 +2,7 @@
 //noinspection GroovyUnusedAssignment
 @Library("Infrastructure") _
 
-def product = "plum"
+def product = "toffee"
 
 withInfraPipeline(product) {
 }
