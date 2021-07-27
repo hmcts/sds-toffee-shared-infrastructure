@@ -78,3 +78,6 @@ variable "common_tags" {
 variable "managed_identity_object_id" {
   default = ""
 }
+variable "developers_group" {
+  default = "DTS SDS Developers"
+}
