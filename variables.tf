@@ -4,7 +4,7 @@ variable "subscription" {}
 
 variable "product" {
   description = "The name of your application"
-  default     = "plum"
+  default     = "toffee"
 }
 
 variable "env" {
@@ -36,10 +36,6 @@ variable "jenkins_AAD_objectId" {
   description = "This is the ID of the Application you wish to give access to the Key Vault via the access policy"
 }
 
-variable "team_contact" {
-  description = "The name of your Slack channel people can use to contact your team about your infrastructure"
-  default     = "#Cloud-Native"
-}
 
 variable "certificate_name" {
   default = "STAR-platform-hmcts-net"
@@ -69,10 +65,6 @@ variable "health_check" {
 
 variable "infra_location" {
   default = "core-infra"
-}
-
-variable "common_tags" {
-  type = map(string)
 }
 
 variable "managed_identity_object_id" {
