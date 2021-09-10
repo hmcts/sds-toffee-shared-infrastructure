@@ -1,4 +1,4 @@
-# cnp-plum-shared-infrastructure
+# sds-toffee-shared-infrastructure
 
 This repository contains the shared the common infra components per Environment (persistent) for Plum
 
