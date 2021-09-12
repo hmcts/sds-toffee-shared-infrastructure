@@ -16,6 +16,14 @@ variable "location" {
   default     = "UK South"
 }
 
+variable "builtFrom" {}
+
+variable "environment" {}
+
+variable "application" {}
+
+variable "businessArea" {}
+
 //APP INSIGHTS SPECIFIC VARIABLES
 variable "appinsights_location" {
   description = "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
@@ -42,12 +50,12 @@ variable "team_contact" {
 }
 
 variable "certificate_name" {
-  default = "STAR-platform-hmcts-net"
+  default     = "STAR-platform-hmcts-net"
   description = "The certificate name to use in public listeners. Should support the public hostname."
 }
 
 variable "public_hostname" {
-  default = "plum.platform.hmcts.net"
+  default     = "plum.platform.hmcts.net"
   description = "The public hostanme to use when accessing plum's frontend"
 }
 
@@ -69,10 +77,6 @@ variable "health_check" {
 
 variable "infra_location" {
   default = "core-infra"
-}
-
-variable "common_tags" {
-  type = map(string)
 }
 
 variable "managed_identity_object_id" {
