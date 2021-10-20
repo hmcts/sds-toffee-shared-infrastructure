@@ -11,7 +11,7 @@ resource "azurerm_application_insights" "appinsights" {
       application_type,
     ]
   }
-  tags = local.tags
+  tags = var.common_tags
 }
 
 output "appInsightsInstrumentationKey" {
