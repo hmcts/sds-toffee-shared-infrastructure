@@ -1,5 +1,5 @@
 module "storage_account" {
-  source                   = "git::https://github.com/hmcts/cnp-module-storage-account.git?ref=master"
+  source                   = "git@github.com:hmcts/cnp-module-storage-account?ref=master"
   env                      = var.env
   storage_account_name     = "testblobstoragetov2"
   resource_group_name      = azurerm_resource_group.shared_resource_group.name
