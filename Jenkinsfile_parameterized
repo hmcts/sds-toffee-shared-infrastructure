@@ -1,7 +1,7 @@
 #!groovy
 import groovy.json.JsonSlurper
 
-@Library('Infrastructure@DTSPO-4155_fix_tagging_env_name') _
+@Library('Infrastructure') _
 
 properties([
     parameters([
