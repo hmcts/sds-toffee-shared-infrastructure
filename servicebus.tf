@@ -10,4 +10,5 @@ module "servicebus-namespace" {
   env                 = var.env
   common_tags         = local.tags
   subnet_id           = try(var.servicebus_pe_subnet_id, "")
+  capacity            = 1
 }
