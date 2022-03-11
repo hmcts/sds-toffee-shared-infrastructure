@@ -81,3 +81,7 @@ variable "managed_identity_object_id" {
 variable "developers_group" {
   default = "DTS SDS Developers"
 }
+
+variable "servicebus_pe_subnet_id" {
+  default = ""
+}
