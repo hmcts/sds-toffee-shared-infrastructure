@@ -9,6 +9,6 @@ module "servicebus-namespace" {
   resource_group_name = azurerm_resource_group.shared_resource_group.name
   env                 = var.env
   common_tags         = local.tags
-  subnet_id           = try(var.servicebus_pe_subnet_id, "")
+  subnet_acl          = try(var.servicebus_pe_subnet_ids, [])
   capacity            = 1
 }
