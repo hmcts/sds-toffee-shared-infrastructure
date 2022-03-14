@@ -82,7 +82,7 @@ variable "developers_group" {
   default = "DTS SDS Developers"
 }
 
-variable "servicebus_pe_subnet_ids" {
+variable "servicebus_pe_subnet_id" {
   default     = ""
   description = "List of subnets that need access to the service bus namespace"
 }
