@@ -82,7 +82,7 @@ variable "developers_group" {
   default = "DTS SDS Developers"
 }
 
-variable "servicebus_pe_subnet_id" {
-  default     = ""
-  description = "List of subnets that need access to the service bus namespace"
+variable "servicebus_enable_private_endpoint" {
+  default     = false
+  description = "Enable service endpoint for service bus"
 }
