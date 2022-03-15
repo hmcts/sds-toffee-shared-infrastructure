@@ -8,7 +8,7 @@ variable "product" {
 }
 
 variable "project" {
-  default     = sds
+  default     = "sds"
   description = "Project name"
 }
 
