@@ -10,5 +10,5 @@ module "servicebus-namespace" {
   env                     = var.env
   common_tags             = local.tags
   capacity                = 1
-  enable_private_endpoint = var.enable_private_endpoint
+  enable_private_endpoint = var.servicebus_enable_private_endpoint
 }
