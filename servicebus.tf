@@ -3,8 +3,8 @@ locals {
 }
 
 module "servicebus-namespace" {
-#   source                  = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"
-  source                  = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=DTSPO-6371_private_endpoint"
+  source                  = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"
+#   source                  = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=DTSPO-6371_private_endpoint"
   name                    = local.servicebus_namespace_name
 #   project                 = var.project
   location                = var.location
