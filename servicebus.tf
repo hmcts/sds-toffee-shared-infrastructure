@@ -9,7 +9,7 @@ module "servicebus-namespace" {
   resource_group_name     = azurerm_resource_group.shared_resource_group.name
   env                     = var.env
   common_tags             = local.tags
-#   project                 = var.project
-#   capacity                = 1
-#   enable_private_endpoint = var.servicebus_enable_private_endpoint
+  project                 = var.project
+  capacity                = 1
+  enable_private_endpoint = var.servicebus_enable_private_endpoint
 }
