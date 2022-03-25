@@ -3,7 +3,7 @@ locals {
 }
 
 module "servicebus-namespace" {
-  source                  = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=DTSPO-6371_private_endpoint"
+  source                  = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"
   name                    = local.servicebus_namespace_name
   location                = var.location
   resource_group_name     = azurerm_resource_group.shared_resource_group.name
