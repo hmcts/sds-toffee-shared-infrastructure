@@ -86,8 +86,3 @@ variable "managed_identity_object_id" {
 variable "developers_group" {
   default = "DTS SDS Developers"
 }
-
-variable "servicebus_enable_private_endpoint" {
-  default     = false
-  description = "Enable service endpoint for service bus"
-}
