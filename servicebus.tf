@@ -11,6 +11,6 @@ module "servicebus-namespace" {
   common_tags         = var.common_tags
   project             = var.project
   # capacity                         = 1
-  enable_private_endpoint          = false
-  private_endpoint_subscription_id = var.subscription_id
+  enable_private_endpoint = false
+  # private_endpoint_subscription_id = var.subscription_id
 }
