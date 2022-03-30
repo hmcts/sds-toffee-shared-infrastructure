@@ -3,9 +3,9 @@ locals {
 }
 
 module "servicebus-namespace" {
-  providers = {
-    azurerm.private-endpoint = azurerm
-  }
+#   providers = {
+#     azurerm.private-endpoint = azurerm
+#   }
   source                  = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=DTSPO-6371_remove_provider"
   name                    = local.servicebus_namespace_name
   location                = var.location
