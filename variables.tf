@@ -1,7 +1,7 @@
 
 //SHARED VARIABLES
 variable "subscription" {}
-variable "aks_subscription_id" {}
+variable "subscription_id" {}
 
 variable "product" {
   description = "The name of your application"
