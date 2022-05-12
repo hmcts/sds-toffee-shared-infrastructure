@@ -1,6 +1,7 @@
 
 //SHARED VARIABLES
 variable "subscription" {}
+variable "subscription_id" {}
 
 variable "product" {
   description = "The name of your application"
@@ -83,6 +84,7 @@ variable "common_tags" {
 variable "managed_identity_object_id" {
   default = ""
 }
+
 variable "developers_group" {
   default = "DTS SDS Developers"
 }
