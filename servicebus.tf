@@ -22,7 +22,7 @@ data "azurerm_user_assigned_identity" "toffee" {
 }
 
 resource "azurerm_role_assignment" "toffee_servicebus_data_owner" {
-  principal_id = data.azurerm_user_assigned_identity.toffee.id
+  principal_id = data.azurerm_user_assigned_identity.toffee.principal_id
   scope        = module.servicebus-namespace.id
   role_definition_name = "Azure Service Bus Data Owner"
 }
@@ -33,7 +33,7 @@ data "azurerm_user_assigned_identity" "keda" {
 }
 
 resource "azurerm_role_assignment" "keda_servicebus_data_owner" {
-  principal_id = data.azurerm_user_assigned_identity.keda.id
+  principal_id = data.azurerm_user_assigned_identity.keda.principal_id
   scope        = module.servicebus-namespace.id
   role_definition_name = "Azure Service Bus Data Owner"
 }
