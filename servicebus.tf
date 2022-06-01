@@ -23,6 +23,6 @@ data "azurerm_user_assigned_identity" "toffee_mi" {
 
 resource "azurerm_role_assignment" "toffee_servicebus" {
   principal_id = data.azurerm_user_assigned_identity.toffee_mi
-  scope        = module.servicebus-namespace.servicebus_namespace_id
+  scope        = module.servicebus-namespace.id
   role_definition_name = "Azure Service Bus Data Owner"
 }
