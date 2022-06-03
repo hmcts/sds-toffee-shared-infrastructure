@@ -21,10 +21,10 @@ data "azurerm_user_assigned_identity" "toffee" {
   resource_group_name = "managed-identities-${var.env}-rg"
 }
 
-resource "azurerm_role_assignment" "toffee_servicebus_data_owner" {
+resource "azurerm_role_assignment" "toffee_servicebus_data_receiver" {
   principal_id = data.azurerm_user_assigned_identity.toffee.principal_id
   scope        = module.servicebus-namespace.id
-  role_definition_name = "Azure Service Bus Data Owner"
+  role_definition_name = "Azure Service Bus Data Receiver"
 }
 
 data "azurerm_user_assigned_identity" "keda" {
@@ -32,8 +32,8 @@ data "azurerm_user_assigned_identity" "keda" {
   resource_group_name = "managed-identities-${var.env}-rg"
 }
 
-resource "azurerm_role_assignment" "keda_servicebus_data_owner" {
+resource "azurerm_role_assignment" "keda_servicebus_data_receiver" {
   principal_id = data.azurerm_user_assigned_identity.keda.principal_id
   scope        = module.servicebus-namespace.id
-  role_definition_name = "Azure Service Bus Data Owner"
+  role_definition_name = "Azure Service Bus Data Receiver"
 }
