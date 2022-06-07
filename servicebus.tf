@@ -42,3 +42,15 @@ resource "azurerm_role_assignment" "keda_servicebus_data_receiver" {
   scope        = module.servicebus-namespace.id
   role_definition_name = "Azure Service Bus Data Receiver"
 }
+
+
+data "azuread_group" "platops" {
+  display_name     = "DTS Platform Operations"
+  security_enabled = true
+}
+
+resource "azurerm_role_assignment" "platops_servicebus_data_owner" {
+  principal_id         = data.azuread_group.platops.object_id
+  scope                = module.servicebus-namespace.id
+  role_definition_name = "Azure Service Bus Data Owner"
+}
