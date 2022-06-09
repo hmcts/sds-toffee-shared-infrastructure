@@ -2,7 +2,10 @@
 //noinspection GroovyUnusedAssignment
 @Library("Infrastructure") _
 
+def branchesToSync = ['demo', 'ithc']
 def product = "toffee"
 
 withInfraPipeline(product) {
+     //Sync demo and ithc with master branch
+    syncBranchesWithMaster(branchesToSync)
 }
