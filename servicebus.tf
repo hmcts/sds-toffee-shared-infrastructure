@@ -16,13 +16,8 @@ module "servicebus-namespace" {
   project                 = var.project
 }
 
-data "azurerm_user_assigned_identity" "toffee" {
-  name                = "toffee-${var.env}-mi"
-  resource_group_name = "managed-identities-${var.env}-rg"
-}
-
 resource "azurerm_role_assignment" "toffee_servicebus_data_receiver" {
-  principal_id = data.azurerm_user_assigned_identity.toffee.principal_id
+  principal_id = module.vault.managed_identity_objectid
   scope        = module.servicebus-namespace.id
   role_definition_name = "Azure Service Bus Data Receiver"
 }
