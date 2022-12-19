@@ -1,6 +1,6 @@
 #!groovy
 //noinspection GroovyUnusedAssignment
-@Library("Infrastructure") _
+@Library("Infrastructure@DTSPO-11788/expiresAfter") _
 
 def branchesToSync = ['demo', 'ithc']
 def product = "toffee"
