@@ -6,7 +6,7 @@ def branchesToSync = ['demo', 'ithc']
 def product = "toffee"
 def expiresAfter = "test"
 
-withInfraPipeline(product, expiresAfter) {
+withInfraPipeline(product) {
      //Sync demo and ithc with master branch
     syncBranchesWithMaster(branchesToSync)
 }
