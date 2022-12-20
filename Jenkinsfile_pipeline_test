@@ -10,7 +10,8 @@ properties([
 library "Infrastructure@${params.LIB_VERSION}"
 
 def product = "apple"
+def expiresAfter = "test"
 
-withInfraPipeline(product) {
+withInfraPipeline(product, expiresAfter) {
   
 }
