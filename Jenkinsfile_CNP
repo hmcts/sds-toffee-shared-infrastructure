@@ -7,7 +7,8 @@ def product = "toffee"
 def component = null
 def expiresAfter = "3000-01-01"
 
-withInfraPipeline(product, component, expiresAfter) {
+withInfraPipeline(product) {
      //Sync demo and ithc with master branch
     syncBranchesWithMaster(branchesToSync)
+    expiresAfter('3000-01-01')
 }
