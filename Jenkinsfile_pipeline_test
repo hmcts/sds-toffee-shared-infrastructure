@@ -14,5 +14,5 @@ def product = "apple"
 // def component = null
 
 withInfraPipeline(product) {
-  
+  expiresAfter('3000-01-01')
 }
