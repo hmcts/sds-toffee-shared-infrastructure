@@ -14,5 +14,5 @@ def expiresAfter = "3000-01-01"
 def component = null
 
 withInfraPipeline(product, component) {
-  expiresAfter(expiresAfter)
+  expires(expiresAfter)
 }
