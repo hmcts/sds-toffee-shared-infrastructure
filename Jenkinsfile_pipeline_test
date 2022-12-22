@@ -10,9 +10,9 @@ properties([
 library "Infrastructure@${params.LIB_VERSION}"
 
 def product = "apple"
-// def expiresAfter = "3000-01-01"
-// def component = null
+def expiresAfter = "3000-01-01"
+def component = null
 
-withInfraPipeline(product) {
-  // expiresAfter('3000-01-01')
+withInfraPipeline(product, component) {
+  expiresAfter(expiresAfter)
 }
