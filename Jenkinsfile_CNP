@@ -10,5 +10,5 @@ def expiresAfter = "3000-01-01"
 withInfraPipeline(product, component) {
      //Sync demo and ithc with master branch
     syncBranchesWithMaster(branchesToSync)
-    expiresAfter(expiresAfter)
+    expires(expiresAfter)
 }
