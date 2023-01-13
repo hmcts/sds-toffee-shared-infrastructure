@@ -12,7 +12,8 @@ library "Infrastructure@${params.LIB_VERSION}"
 def product = "apple"
 def expiresAfter = "3000-01-01"
 def component = null
+def tfPlanOnly = true
 
-withInfraPipeline(product) {
+withInfraPipeline(productm tfPlanOnly) {
   expires(expiresAfter)
 }
