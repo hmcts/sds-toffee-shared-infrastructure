@@ -1,13 +1,11 @@
 #!groovy
 //noinspection GroovyUnusedAssignment
-@Library("Infrastructure@DTSPO-11969/sbox-tags") _
+@Library("Infrastructure") _
 
 def branchesToSync = ['demo', 'ithc']
 def product = "toffee"
-def expiresAfter = "3000-01-01"
 
 withInfraPipeline(product) {
      //Sync demo and ithc with master branch
     syncBranchesWithMaster(branchesToSync)
-    expires(expiresAfter)
 }
