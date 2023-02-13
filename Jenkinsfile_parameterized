@@ -5,12 +5,11 @@ import groovy.json.JsonSlurper
 
 properties([
     parameters([
-        string(name: 'PRODUCT_NAME', defaultValue: 'toffee', description: '')
+        string(name: 'PRODUCT_NAME', defaultValue: 'toffee', description: ''),
+        string(name: 'EXPIRES_AFTER', defaultValue: '3000-01-01', description: '')
     ])
 ])
 
-def expiresAfter = "3000-01-01"
-
 withParameterizedInfraPipeline(params.PRODUCT_NAME, 'sbox', 'sbox') {
-    expires(expiresAfter)
+    expires(params.EXPIRES_AFTER)
 }
