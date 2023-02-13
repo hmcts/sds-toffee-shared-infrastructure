@@ -13,8 +13,4 @@ def product = "apple"
 
 withInfraPipeline(product) {
   
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> parent of cfcb808 (update pipeline test)
