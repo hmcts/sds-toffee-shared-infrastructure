@@ -12,4 +12,5 @@ library "Infrastructure@${params.LIB_VERSION}"
 def product = "apple"
 
 withInfraPipeline(product) {
+  
 }
