@@ -16,6 +16,7 @@ This repository contains the shared the common infra components per Deployment T
 - App Service Plan (DT)
 - Storage Account (DT)
 
+
 ## Traffic Manager
 
 This module builds Traffic Manager which points to Application Gateway endpoints which then points to the hostname of the web app.
