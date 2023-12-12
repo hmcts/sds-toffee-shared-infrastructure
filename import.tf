@@ -14,11 +14,6 @@ import {
 }
 
 import {
-  to = azurerm_key_vault_access_policy.managed_identity_access_policy["60ab1441-a8a9-4990-aa30-c94e9f0b047b"]
-  id = "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/apple-shared-infrastructure-sbox/providers/Microsoft.KeyVault/vaults/applesi-sbox/objectId/60ab1441-a8a9-4990-aa30-c94e9f0b047b"
-}
-
-import {
   to = azurerm_key_vault_access_policy.product_team_access_policy
   id = "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/apple-shared-infrastructure-sbox/providers/Microsoft.KeyVault/vaults/applesi-sbox/objectId/e7ea2042-4ced-45dd-8ae3-e051c6551789"
 }
