@@ -4,11 +4,6 @@ import {
 }
 
 import {
-  to = azurerm_key_vault_access_policy.developer[0]
-  id = "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/apple-shared-infrastructure-sbox/providers/Microsoft.KeyVault/vaults/applesi-sbox/objectId/7bde62e7-b39f-487c-95c9-b4c794fdbb96"
-}
-
-import {
   to = azurerm_monitor_diagnostic_setting.kv-ds
   id = "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/apple-shared-infrastructure-sbox/providers/Microsoft.KeyVault/vaults/applesi-sbox|applesi-sbox"
 }
