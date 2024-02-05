@@ -11,13 +11,11 @@ data "azurerm_subscription" "current" {
 }
 
 data "azurerm_windows_function_app" "alerts" {
-  provider            = azurerm.private_endpoint
   name                = "${local.business_area}-alerts-slack-${local.env}"
   resource_group_name = "${local.business_area}-alerts-slack-${local.env}"
 }
 
 data "azurerm_function_app_host_keys" "host_keys" {
-  provider            = azurerm.private_endpoint
   name                = data.azurerm_windows_function_app.alerts.name
   resource_group_name = "${local.business_area}-alerts-slack-${local.env}"
 }
