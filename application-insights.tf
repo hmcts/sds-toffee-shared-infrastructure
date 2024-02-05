@@ -38,6 +38,7 @@ module "application_insights" {
   name    = "${var.product}"
 
   resource_group_name = azurerm_resource_group.shared_resource_group.name
+  action_group_id = azurerm_monitor_action_group.action_group.id
 
   common_tags = var.common_tags
 }
