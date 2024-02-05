@@ -3,6 +3,13 @@ locals {
   business_area = strcontains(lower(data.azurerm_subscription.current.display_name), "cftapps") ? "cft" : "sds"
 }
 
+data "azurerm_client_config" "current" {
+}
+
+data "azurerm_subscription" "current" {
+  subscription_id = data.azurerm_client_config.current.subscription_id
+}
+
 data "azurerm_windows_function_app" "alerts" {
   provider            = azurerm.private_endpoint
   name                = "${local.business_area}-alerts-slack-${local.env}"
