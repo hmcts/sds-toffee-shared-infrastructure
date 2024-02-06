@@ -92,8 +92,5 @@ variable "developers_group" {
 variable "email_receiver_config" {
   description = "Configuration for email receiver in the action group"
   type        = map(string)
-  default     = {
-      name          = "test"
-      email_address = "tyler.mcdowell@justice.gov.uk"
-  }
+  default     = null
 }
