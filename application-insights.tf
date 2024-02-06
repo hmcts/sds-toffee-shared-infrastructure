@@ -51,7 +51,6 @@ module "application_insights" {
   name    = "${var.product}"
 
   resource_group_name   = azurerm_resource_group.shared_resource_group.name
-  action_group_id       = azurerm_monitor_action_group.action_group.id
   email_receiver_config = {
     name              = "test"
     email_address     = "tyler.mcdowell@justice.gov.uk"
