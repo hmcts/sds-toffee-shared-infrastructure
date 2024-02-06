@@ -92,5 +92,5 @@ variable "developers_group" {
 variable "email_receiver_config" {
   description = "Configuration for email receiver in the action group"
   type        = map(string)
-  default     = nulle
+  default     = null
 }
