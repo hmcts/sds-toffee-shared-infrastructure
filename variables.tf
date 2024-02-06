@@ -88,3 +88,12 @@ variable "managed_identity_object_id" {
 variable "developers_group" {
   default = "DTS SDS Developers"
 }
+
+variable "email_receiver_config" {
+  description = "Configuration for email receiver in the action group"
+  type        = map(string)
+  default     = {
+      name          = "test"
+      email_address = "tyler.mcdowell@justice.gov.uk"
+  }
+}
