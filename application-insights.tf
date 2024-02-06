@@ -44,7 +44,7 @@
 # }
 
 module "application_insights" {
-  source = "git@github.com:hmcts/terraform-module-application-insights?ref=agmodule"
+  source = "git@github.com:hmcts/terraform-module-application-insights?ref=DTSPO-14997-adding-addition-action-group-to-module"
 
   env     = var.env
   product = var.product
