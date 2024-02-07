@@ -10,6 +10,7 @@ module "application_insights" {
     name              = "test"
     email_address     = "tyler.mcdowell@justice.gov.uk"
   }
+  aks_subscription_id = var.aks_subscription_id
 
   common_tags = var.common_tags
 }
