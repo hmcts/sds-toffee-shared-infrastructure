@@ -94,3 +94,5 @@ variable "email_receiver_config" {
   type        = map(string)
   default     = null
 }
+
+variable "aks_subscription_id" {}
