@@ -24,3 +24,7 @@ resource "azurerm_key_vault_secret" "appInsights-InstrumentationKey" {
   value        = module.application_insights.instrumentation_key
   key_vault_id = module.vault.key_vault_id
 }
+
+output "test_resutl" {
+  value = module.application_insights.channel_id
+}
