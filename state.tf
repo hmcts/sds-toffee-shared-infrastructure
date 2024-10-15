@@ -4,7 +4,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.116.0"
+      version = "4.5.0"
     }
     azuread = {
       source  = "hashicorp/azuread"
@@ -18,7 +18,7 @@ terraform {
 
 provider "azurerm" {
   features {}
-  skip_provider_registration = true
-  alias                      = "private_endpoint"
-  subscription_id            = var.subscription_id
+  resource_provider_registrations = "all"
+  alias                           = "private_endpoint"
+  subscription_id                 = var.subscription_id
 }
