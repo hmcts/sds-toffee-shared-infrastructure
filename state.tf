@@ -18,7 +18,7 @@ terraform {
 
 provider "azurerm" {
   features {}
-  skip_provider_registration = true
+  resource_provider_registrations = "all"
   alias                      = "private_endpoint"
   subscription_id            = var.subscription_id
 }
