@@ -12,7 +12,7 @@ module "ai" {
   common_tags                     = var.common_tags
   product                         = var.project
   component                       = var.product
-  key_vault_id                    = module.key_vault.key_vault_id
+  key_vault_id                    = module.vault.key_vault_id
   application_insights_id         = module.application_insights.id
   create_cognitive_account        = true
   cognitive_account_kind          = "SpeechServices"
