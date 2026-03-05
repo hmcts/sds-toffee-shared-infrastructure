@@ -18,4 +18,5 @@ module "ai" {
   cognitive_account_kind       = "SpeechServices"
   cognitive_account_sku        = "S0"
   subnet_id                    = data.azurerm_subnet.private_endpoint_subnet.id
+  enable_managed_network       = true
 }
