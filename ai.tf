@@ -1,7 +1,7 @@
 data "azurerm_subnet" "private_endpoint_subnet" {
   name                 = "private-endpoints"
+  resource_group_name  = "ss-${var.env}-network-rg"
   virtual_network_name = "ss-${var.env}-vnet"
-  resource_group_name  = azurerm_resource_group.shared_resource_group.name
 }
 
 module "ai" {
