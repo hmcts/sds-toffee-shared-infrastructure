@@ -1,5 +1,5 @@
-data "azurerm_subnet" "private_endpoint_subnet" {
-  name                 = "private-endpoints"
+data "azurerm_subnet" "iaas_subnet" {
+  name                 = "iaas"
   resource_group_name  = "ss-${var.env}-network-rg"
   virtual_network_name = "ss-${var.env}-vnet"
 }
@@ -18,6 +18,6 @@ module "ai" {
   create_cognitive_account     = true
   cognitive_account_kind       = "SpeechServices"
   cognitive_account_sku        = "S0"
-  subnet_id                    = data.azurerm_subnet.private_endpoint_subnet.id
+  subnet_id                    = data.azurerm_subnet.iaas_subnet.id
   enable_managed_network       = true
 }
