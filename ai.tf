@@ -5,6 +5,7 @@ data "azurerm_subnet" "private_endpoint_subnet" {
 }
 
 module "ai" {
+  count                        = var.env == "sbox" ? 1 : 0
   source                       = "git::https://github.com/hmcts/terraform-module-ai-services?ref=DTSPO-30612/optional-networking"
   env                          = var.env
   project                      = "${var.project}-${var.product}"
