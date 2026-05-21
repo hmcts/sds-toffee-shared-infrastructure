@@ -13,6 +13,7 @@ module "vault" {
   managed_identity_object_id = var.managed_identity_object_id
   create_managed_identity    = true
   developers_group           = var.developers_group
+  developers_group_object_id = "7bde62e7-b39f-487c-95c9-b4c794fdbb96"
   jenkins_object_id          = data.azurerm_user_assigned_identity.jenkins.principal_id
 }
 

@@ -1,5 +1,6 @@
 locals {
   servicebus_namespace_name = "${var.product}-servicebus-${var.env}"
+  platops_object_id         = "e7ea2042-4ced-45dd-8ae3-e051c6551789"
 }
 
 module "servicebus-namespace" {
@@ -39,13 +40,8 @@ resource "azurerm_role_assignment" "keda_servicebus_data_receiver" {
 }
 
 
-data "azuread_group" "platops" {
-  display_name     = "DTS Platform Operations"
-  security_enabled = true
-}
-
 resource "azurerm_role_assignment" "platops_servicebus_data_owner" {
-  principal_id         = data.azuread_group.platops.object_id
+  principal_id         = local.platops_object_id
   scope                = module.servicebus-namespace.id
   role_definition_name = "Azure Service Bus Data Owner"
 }
