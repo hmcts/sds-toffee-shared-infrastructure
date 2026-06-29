@@ -14,6 +14,7 @@ module "vault" {
   create_managed_identity    = true
   developers_group           = var.developers_group
   jenkins_object_id          = data.azurerm_user_assigned_identity.jenkins.principal_id
+  grant_dev_jenkins_access   = var.env == "stg"
 }
 
 output "vaultName" {
